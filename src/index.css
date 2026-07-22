@@ -1,4 +1,25 @@
+@import "tailwindcss";
+
+/* 1. Registrasi Theme untuk Utility Classes Tailwind v4 */
+@theme {
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Manrope', sans-serif;
+
+  --color-blush: #fff6f8;
+  --color-blush-2: #fff0f3;
+  --color-rose: #ff6f91;
+  --color-rose-deep: #e94c73;
+  --color-soft-pink: #ffd3de;
+  --color-plum: #4a2545;
+  --color-plum-soft: #7a4a6e;
+  --color-gold: #eab064;
+  --color-sage: #8fa998;
+  --color-paper: #fffaf7;
+}
+
+/* 2. Custom CSS Variables & Integrasi Warna shadcn UI */
 :root {
+  /* Variable Asli Kamu */
   --blush: #fff6f8;
   --blush-2: #fff0f3;
   --rose: #ff6f91;
@@ -12,8 +33,31 @@
 
   --font-display: 'Fraunces', serif;
   --font-body: 'Manrope', sans-serif;
+
+  /* Map ke Variabel UI shadcn agar Komponen (seperti Button) langsung pas */
+  --background: #fff6f8;
+  --foreground: #4a2545;
+  --card: #fffaf7;
+  --card-foreground: #4a2545;
+  --popover: #fffaf7;
+  --popover-foreground: #4a2545;
+  --primary: #ff6f91;
+  --primary-foreground: #ffffff;
+  --secondary: #ffd3de;
+  --secondary-foreground: #4a2545;
+  --muted: #fff0f3;
+  --muted-foreground: #7a4a6e;
+  --accent: #fff0f3;
+  --accent-foreground: #4a2545;
+  --destructive: #e94c73;
+  --destructive-foreground: #ffffff;
+  --border: #ffd3de;
+  --input: #ffd3de;
+  --ring: #ff6f91;
+  --radius: 0.75rem;
 }
 
+/* 3. Base Styles */
 * {
   box-sizing: border-box;
 }
@@ -24,8 +68,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--blush);
-  color: var(--plum);
+  background: var(--background);
+  color: var(--foreground);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;

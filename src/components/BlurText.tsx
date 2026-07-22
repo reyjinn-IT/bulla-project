@@ -1,4 +1,4 @@
-import { useOnScreen } from '../hooks/useOnScreen'
+import { useOnScreen } from '../../useOnScreen'
 import './BlurText.css'
 
 interface BlurTextProps {

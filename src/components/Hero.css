@@ -10,6 +10,21 @@
   overflow: hidden;
 }
 
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero__bg > div {
+  width: min(1080px, 130vw) !important;
+  height: min(1080px, 130vh) !important;
+}
+
 .hero__inner {
   position: relative;
   z-index: 1;

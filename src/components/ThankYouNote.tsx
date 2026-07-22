@@ -1,4 +1,4 @@
-import { useOnScreen } from '../hooks/useOnScreen'
+import { useOnScreen } from '../../useOnScreen'
 import './ThankYouNote.css'
 
 const PARAGRAPHS = [
