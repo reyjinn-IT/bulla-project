@@ -1,0 +1,72 @@
+.fluid-glass-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.22) 100%
+  );
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  box-shadow:
+    0 1px 1px rgba(255, 255, 255, 0.6) inset,
+    0 -6px 12px rgba(0, 0, 0, 0.04) inset,
+    0 10px 24px rgba(74, 37, 69, 0.14);
+  color: var(--plum, #4a2545);
+  font-weight: 600;
+  font-size: 0.98rem;
+  cursor: pointer;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.fluid-glass-btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 1px 1px rgba(255, 255, 255, 0.7) inset,
+    0 -6px 14px rgba(0, 0, 0, 0.05) inset,
+    0 14px 28px rgba(74, 37, 69, 0.18);
+}
+
+.fluid-glass-btn:active {
+  transform: translateY(0);
+  box-shadow:
+    0 1px 1px rgba(255, 255, 255, 0.5) inset,
+    0 -4px 8px rgba(0, 0, 0, 0.05) inset,
+    0 6px 14px rgba(74, 37, 69, 0.14);
+}
+
+.fluid-glass-btn__sheen {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.55) 48%,
+    transparent 65%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+.fluid-glass-btn:hover .fluid-glass-btn__sheen {
+  transform: translateX(120%);
+}
+
+.fluid-glass-btn__label {
+  position: relative;
+  z-index: 1;
+}
+
+.fluid-glass-btn:focus-visible {
+  outline: 2px solid var(--rose, #ff6f91);
+  outline-offset: 3px;
+}
