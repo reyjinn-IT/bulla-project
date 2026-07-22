@@ -1,0 +1,56 @@
+:root {
+  --blush: #fff6f8;
+  --blush-2: #fff0f3;
+  --rose: #ff6f91;
+  --rose-deep: #e94c73;
+  --soft-pink: #ffd3de;
+  --plum: #4a2545;
+  --plum-soft: #7a4a6e;
+  --gold: #eab064;
+  --sage: #8fa998;
+  --paper: #fffaf7;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Manrope', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--blush);
+  color: var(--plum);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  margin: 0;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+button {
+  font-family: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

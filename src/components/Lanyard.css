@@ -1,0 +1,107 @@
+.lanyard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6px;
+  user-select: none;
+}
+
+.lanyard__strap {
+  width: 6px;
+  height: 90px;
+  background: linear-gradient(180deg, var(--rose), var(--rose-deep));
+  border-radius: 4px;
+}
+
+.lanyard__clip {
+  width: 26px;
+  height: 14px;
+  background: var(--plum-soft);
+  border-radius: 4px;
+  margin-top: -4px;
+  z-index: 1;
+}
+
+.lanyard__card {
+  margin-top: -6px;
+  width: 220px;
+  background: var(--paper);
+  border-radius: 16px;
+  border: 1px solid var(--soft-pink);
+  box-shadow: 0 22px 40px -18px rgba(74, 37, 69, 0.35);
+  padding: 18px 18px 22px;
+  cursor: grab;
+  transform-origin: top center;
+  touch-action: none;
+}
+
+.lanyard__card--dragging {
+  cursor: grabbing;
+  transition: none;
+}
+
+.lanyard__card--idle {
+  animation: lanyard-sway 5s ease-in-out infinite;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes lanyard-sway {
+  0%, 100% {
+    transform: rotate(-2.5deg);
+  }
+  50% {
+    transform: rotate(2.5deg);
+  }
+}
+
+.lanyard__hole {
+  width: 30px;
+  height: 8px;
+  background: var(--blush);
+  border: 1px solid var(--soft-pink);
+  border-radius: 6px;
+  margin: 0 auto 14px;
+}
+
+.lanyard__photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--soft-pink);
+}
+
+.lanyard__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lanyard__info {
+  margin-top: 14px;
+  text-align: center;
+}
+
+.lanyard__name {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--plum);
+}
+
+.lanyard__role {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lanyard__card--idle {
+    animation: none;
+  }
+}

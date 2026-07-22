@@ -1,0 +1,37 @@
+.scroll-stack {
+  max-width: 640px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.scroll-stack__card {
+  position: sticky;
+  will-change: transform, filter;
+  background: var(--paper);
+  border: 1px solid var(--soft-pink);
+  border-radius: 22px;
+  padding: 40px 40px 44px;
+  margin-bottom: 28px;
+  box-shadow: 0 20px 46px -20px rgba(74, 37, 69, 0.22);
+  transform-origin: top center;
+}
+
+.scroll-stack__index {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.scroll-stack__title {
+  font-size: 1.35rem;
+  color: var(--plum);
+  margin-bottom: 10px;
+}
+
+.scroll-stack__desc {
+  color: var(--plum-soft);
+  font-size: 1rem;
+}

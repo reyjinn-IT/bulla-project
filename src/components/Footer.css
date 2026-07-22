@@ -1,0 +1,19 @@
+.footer {
+  padding: 60px 24px 70px;
+  background: var(--plum);
+  text-align: center;
+}
+
+.footer__note {
+  color: var(--soft-pink);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+.footer__heart {
+  display: block;
+  margin-top: 14px;
+  color: var(--rose);
+  font-size: 1.4rem;
+}

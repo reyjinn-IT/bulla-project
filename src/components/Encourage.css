@@ -1,0 +1,11 @@
+.encourage {
+  padding: 100px 24px 60px;
+  background: var(--blush);
+}
+
+.encourage__heading {
+  text-align: center;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  color: var(--plum);
+  margin-bottom: 56px;
+}
