@@ -60,3 +60,13 @@
   font-size: 0.9rem;
   color: var(--plum-soft);
 }
+
+@media (max-width: 640px) {
+  .gallery {
+    padding: 60px 16px 80px;
+  }
+  .gallery__grid {
+    gap: 24px 18px;
+    margin-top: 36px;
+  }
+}

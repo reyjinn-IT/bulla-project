@@ -27,7 +27,7 @@ export default function Hero() {
       <div className="hero__inner">
         <span className="hero__eyebrow">buat Bulla yang lagi baca ini</span>
         <BlurText as="h1" text="Terima kasih, Bulla" className="hero__title" />
-        <BlurText as="h1" text="tetap semangat, ya!" className="hero__title" delay={300} />
+        <BlurText as="h2" text="tetap semangat, ya!" className="hero__title" delay={300} />
         <p className="hero__sub">
           Halaman kecil ini gw bikin khusus buat Bulla, biar tau satu hal: usaha kamu selama ini
           kelihatan, dan gw bersyukur ada kamu.

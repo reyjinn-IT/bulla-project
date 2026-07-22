@@ -1,9 +1,12 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, type CSSProperties } from 'react'
+import type { LucideIcon } from 'lucide-react'
 import './ScrollStack.css'
 
 export interface StackCard {
   title: string
   desc: string
+  icon?: LucideIcon
+  accent?: string
 }
 
 interface ScrollStackProps {
@@ -47,20 +50,31 @@ export default function ScrollStack({ cards }: ScrollStackProps) {
 
   return (
     <div className="scroll-stack" ref={containerRef}>
-      {cards.map((card, i) => (
-        <div
-          key={i}
-          className="scroll-stack__card"
-          style={{ top: `${96 + i * 18}px`, zIndex: i + 1 }}
-          ref={(el) => {
-            cardRefs.current[i] = el
-          }}
-        >
-          <span className="scroll-stack__index">{String(i + 1).padStart(2, '0')}</span>
-          <h3 className="scroll-stack__title">{card.title}</h3>
-          <p className="scroll-stack__desc">{card.desc}</p>
-        </div>
-      ))}
+      {cards.map((card, i) => {
+        const Icon = card.icon
+        const accent = card.accent ?? 'var(--rose)'
+        return (
+          <div
+            key={i}
+            className="scroll-stack__card"
+            style={{ top: `${96 + i * 18}px`, zIndex: i + 1, '--accent': accent } as CSSProperties}
+            ref={(el) => {
+              cardRefs.current[i] = el
+            }}
+          >
+            <div className="scroll-stack__top">
+              <span className="scroll-stack__index">{String(i + 1).padStart(2, '0')}</span>
+              {Icon && (
+                <span className="scroll-stack__icon">
+                  <Icon size={20} strokeWidth={2} />
+                </span>
+              )}
+            </div>
+            <h3 className="scroll-stack__title">{card.title}</h3>
+            <p className="scroll-stack__desc">{card.desc}</p>
+          </div>
+        )
+      })}
     </div>
   )
 }

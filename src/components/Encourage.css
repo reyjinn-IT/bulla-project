@@ -9,3 +9,12 @@
   color: var(--plum);
   margin-bottom: 56px;
 }
+
+@media (max-width: 640px) {
+  .encourage {
+    padding: 64px 16px 40px;
+  }
+  .encourage__heading {
+    margin-bottom: 36px;
+  }
+}

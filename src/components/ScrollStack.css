@@ -9,11 +9,19 @@
   will-change: transform, filter;
   background: var(--paper);
   border: 1px solid var(--soft-pink);
+  border-left: 4px solid var(--accent, var(--rose));
   border-radius: 22px;
-  padding: 40px 40px 44px;
+  padding: 32px 36px 38px;
   margin-bottom: 28px;
   box-shadow: 0 20px 46px -20px rgba(74, 37, 69, 0.22);
   transform-origin: top center;
+}
+
+.scroll-stack__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
 }
 
 .scroll-stack__index {
@@ -22,7 +30,17 @@
   font-weight: 800;
   letter-spacing: 0.1em;
   color: var(--gold);
-  margin-bottom: 14px;
+}
+
+.scroll-stack__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent, var(--rose)) 16%, var(--paper));
+  color: var(--accent, var(--rose-deep));
 }
 
 .scroll-stack__title {

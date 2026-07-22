@@ -17,3 +17,9 @@
   color: var(--rose);
   font-size: 1.4rem;
 }
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 40px 16px 50px;
+  }
+}

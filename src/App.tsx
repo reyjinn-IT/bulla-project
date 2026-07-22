@@ -1,5 +1,5 @@
 import Hero from './components/Hero'
-import ThankYouNote from './components/ThankYouNote'
+import Letter from './components/Letter'
 import Encourage from './components/Encourage'
 import Gallery from './components/Gallery'
 import Signature from './components/Signature'
@@ -9,7 +9,7 @@ export default function App() {
   return (
     <main>
       <Hero />
-      <ThankYouNote />
+      <Letter />
       <Encourage />
       <Gallery />
       <Signature />
