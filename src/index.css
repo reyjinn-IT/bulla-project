@@ -1,59 +1,63 @@
 @import "tailwindcss";
 
-/* 1. Registrasi Theme untuk Utility Classes Tailwind v4 */
+/* 1. Registrasi Theme — Moonlit Night Sky (softened) */
 @theme {
   --font-display: 'Fraunces', serif;
   --font-body: 'Manrope', sans-serif;
 
-  --color-blush: #fff6f8;
-  --color-blush-2: #fff0f3;
-  --color-rose: #ff6f91;
-  --color-rose-deep: #e94c73;
-  --color-soft-pink: #ffd3de;
-  --color-plum: #4a2545;
-  --color-plum-soft: #7a4a6e;
-  --color-gold: #eab064;
-  --color-sage: #8fa998;
-  --color-paper: #fffaf7;
+  --color-night: #1a1028;
+  --color-night-2: #201430;
+  --color-night-soft: #2a1a3a;
+  --color-pink: #ff6b9d;
+  --color-pink-deep: #e84393;
+  --color-pink-soft: #f8a5c2;
+  --color-pink-glow: #ff6b9d40;
+  --color-moon: #f5e6cc;
+  --color-moon-glow: #f5e6cc30;
+  --color-star: #ffffff;
+  --color-lavender: #c8b8da;
+  --color-card: #2a1a3a;
+  --color-card-border: #ff6b9d30;
 }
 
-/* 2. Custom CSS Variables & Integrasi Warna shadcn UI */
+/* 2. Custom CSS Variables & shadcn UI */
 :root {
-  /* Variable Asli Kamu */
-  --blush: #fff6f8;
-  --blush-2: #fff0f3;
-  --rose: #ff6f91;
-  --rose-deep: #e94c73;
-  --soft-pink: #ffd3de;
-  --plum: #4a2545;
-  --plum-soft: #7a4a6e;
-  --gold: #eab064;
-  --sage: #8fa998;
-  --paper: #fffaf7;
+  --night: #1a1028;
+  --night-2: #201430;
+  --night-soft: #2a1a3a;
+  --pink: #ff6b9d;
+  --pink-deep: #e84393;
+  --pink-soft: #f8a5c2;
+  --pink-glow: #ff6b9d40;
+  --moon: #f5e6cc;
+  --moon-glow: #f5e6cc30;
+  --star: #ffffff;
+  --lavender: #c8b8da;
+  --card: #2a1a3a;
+  --card-border: #ff6b9d30;
 
   --font-display: 'Fraunces', serif;
   --font-body: 'Manrope', sans-serif;
 
-  /* Map ke Variabel UI shadcn agar Komponen (seperti Button) langsung pas */
-  --background: #fff6f8;
-  --foreground: #4a2545;
-  --card: #fffaf7;
-  --card-foreground: #4a2545;
-  --popover: #fffaf7;
-  --popover-foreground: #4a2545;
-  --primary: #ff6f91;
-  --primary-foreground: #ffffff;
-  --secondary: #ffd3de;
-  --secondary-foreground: #4a2545;
-  --muted: #fff0f3;
-  --muted-foreground: #7a4a6e;
-  --accent: #fff0f3;
-  --accent-foreground: #4a2545;
-  --destructive: #e94c73;
+  --background: #1a1028;
+  --foreground: #f8a5c2;
+  --card: #2a1a3a;
+  --card-foreground: #f8a5c2;
+  --popover: #2a1a3a;
+  --popover-foreground: #f8a5c2;
+  --primary: #ff6b9d;
+  --primary-foreground: #1a1028;
+  --secondary: #201430;
+  --secondary-foreground: #f8a5c2;
+  --muted: #201430;
+  --muted-foreground: #c8b8da;
+  --accent: #2a1a3a;
+  --accent-foreground: #f8a5c2;
+  --destructive: #e84393;
   --destructive-foreground: #ffffff;
-  --border: #ffd3de;
-  --input: #ffd3de;
-  --ring: #ff6f91;
+  --border: #ff6b9d30;
+  --input: #ff6b9d30;
+  --ring: #ff6b9d;
   --radius: 0.75rem;
 }
 
@@ -68,7 +72,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--background);
+  background: var(--night);
   color: var(--foreground);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
@@ -90,11 +94,49 @@ button {
   font-family: inherit;
 }
 
+/* ---------- Global star field ---------- */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 25% 35%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1.5px 1.5px at 40% 10%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 55% 45%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 70% 20%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1.5px 1.5px at 85% 55%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 15% 65%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1px 1px at 30% 80%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1.5px 1.5px at 50% 70%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 65% 85%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1px 1px at 80% 75%, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1.5px 1.5px at 92% 40%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 5% 90%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 45% 25%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 75% 50%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1.2px 1.2px at 20% 48%, rgba(248,165,194,0.5), transparent),
+    radial-gradient(1.2px 1.2px at 60% 62%, rgba(248,165,194,0.4), transparent),
+    radial-gradient(1.2px 1.2px at 88% 18%, rgba(248,165,194,0.5), transparent);
+  animation: stars-twinkle 6s ease-in-out infinite alternate;
+}
+
+@keyframes stars-twinkle {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  body::before {
+    opacity: 0.7;
   }
 }

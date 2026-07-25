@@ -3,9 +3,9 @@ import './ThankYouNote.css'
 
 const PARAGRAPHS = [
   'Gw cuma mau bilang, makasih ya udah jadi orang yang selalu ada — baik pas lagi seru-seruan atau pas lagi capek banget.',
-  'Gw tau belakangan ini banyak yang lagi kamu kejar, dan gw lihat kok, kamu udah berusaha keras.',
+  'Gw tau belakangan ini banyak yang lagi kamu kejar, dan aku lihat kok, kamu udah berusaha keras.',
   'Jangan lupa istirahat, jangan terlalu keras sama diri sendiri. Kamu udah jalan jauh, dan itu layak diapresiasi.',
-  'Apapun yang kamu kerjain sekarang, gw dukung dari sini. Semangat terus!',
+  'Apapun yang kamu kerjain sekarang, aku dukung dari sini. Semangat terus!',
 ]
 
 export default function ThankYouNote() {

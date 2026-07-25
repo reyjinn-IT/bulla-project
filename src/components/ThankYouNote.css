@@ -2,17 +2,19 @@
   padding: 100px 24px;
   display: flex;
   justify-content: center;
-  background: var(--blush-2);
+  background: linear-gradient(180deg, #0e0c1e 0%, #0a0a16 100%);
 }
 
 .thanks__card {
   max-width: 620px;
   width: 100%;
-  background: var(--paper);
+  background: linear-gradient(160deg, #14142a 0%, #0e0e1e 100%);
   border-radius: 22px;
   padding: 48px 40px;
-  box-shadow: 0 20px 50px -20px rgba(74, 37, 69, 0.18);
-  border: 1px solid var(--soft-pink);
+  box-shadow:
+    0 20px 50px -20px rgba(0, 0, 0, 0.5),
+    0 0 30px -8px var(--pink-glow);
+  border: 1px solid var(--card-border);
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.7s ease, transform 0.7s ease;
@@ -28,8 +30,9 @@
   font-family: var(--font-display);
   font-style: italic;
   font-size: 1.4rem;
-  color: var(--rose-deep);
+  color: var(--pink);
   margin-bottom: 24px;
+  text-shadow: 0 0 16px var(--pink-glow);
 }
 
 .thanks__body {
@@ -39,7 +42,7 @@
 }
 
 .thanks__p {
-  color: var(--plum-soft);
+  color: var(--pink-soft);
   font-size: 1.02rem;
   opacity: 0;
   transform: translateY(10px);
@@ -56,7 +59,7 @@
   margin-top: 30px;
   font-family: var(--font-display);
   font-style: italic;
-  color: var(--gold);
+  color: var(--moon);
   font-size: 1rem;
 }
 

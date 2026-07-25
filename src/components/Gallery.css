@@ -1,17 +1,18 @@
 .gallery {
   padding: 100px 24px 120px;
-  background: var(--blush-2);
+  background: linear-gradient(180deg, #1c1028 0%, #221436 50%, #1e1230 100%);
   text-align: center;
 }
 
 .gallery__heading {
   font-size: clamp(1.9rem, 4vw, 2.6rem);
-  color: var(--plum);
+  color: var(--moon);
+  text-shadow: 0 0 30px rgba(245, 230, 204, 0.12);
 }
 
 .gallery__sub {
   margin-top: 10px;
-  color: var(--plum-soft);
+  color: var(--pink-soft);
 }
 
 .gallery__grid {
@@ -26,22 +27,27 @@
 
 .gallery__frame {
   margin: 0;
-  background: var(--paper);
+  background: linear-gradient(160deg, #fff2f6 0%, #ffe0ea 100%);
   padding: 14px 14px 20px;
   border-radius: 6px;
-  box-shadow: 0 14px 30px -14px rgba(74, 37, 69, 0.25);
+  border: 1px solid #ffd0de;
+  box-shadow:
+    0 14px 30px -14px rgba(255, 107, 157, 0.25),
+    0 0 20px -6px rgba(255, 107, 157, 0.12);
   transform: rotate(var(--rotate));
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery__frame:hover {
   transform: rotate(0deg) scale(1.04) translateY(-4px);
-  box-shadow: 0 20px 40px -16px rgba(74, 37, 69, 0.32);
+  box-shadow:
+    0 20px 40px -16px rgba(255, 107, 157, 0.3),
+    0 0 30px -4px rgba(255, 107, 157, 0.18);
 }
 
 .gallery__image {
   aspect-ratio: 1 / 1;
-  background: var(--soft-pink);
+  background: #ffd6e0;
   border-radius: 3px;
   overflow: hidden;
 }
@@ -58,7 +64,7 @@
   font-family: var(--font-display);
   font-style: italic;
   font-size: 0.9rem;
-  color: var(--plum-soft);
+  color: #8a4a6a;
 }
 
 @media (max-width: 640px) {

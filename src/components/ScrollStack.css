@@ -7,13 +7,15 @@
 .scroll-stack__card {
   position: sticky;
   will-change: transform, filter;
-  background: var(--paper);
-  border: 1px solid var(--soft-pink);
-  border-left: 4px solid var(--accent, var(--rose));
+  background: linear-gradient(160deg, #fff5f8 0%, #ffe8ef 100%);
+  border: 1px solid #ffd0de;
+  border-left: 4px solid var(--accent, #ff6b9d);
   border-radius: 22px;
   padding: 32px 36px 38px;
   margin-bottom: 28px;
-  box-shadow: 0 20px 46px -20px rgba(74, 37, 69, 0.22);
+  box-shadow:
+    0 16px 40px -18px rgba(255, 107, 157, 0.2),
+    0 0 30px -8px rgba(255, 107, 157, 0.1);
   transform-origin: top center;
 }
 
@@ -29,27 +31,28 @@
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.1em;
-  color: var(--gold);
+  color: #c084a0;
 }
 
 .scroll-stack__icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: color-mix(in srgb, var(--accent, var(--rose)) 16%, var(--paper));
-  color: var(--accent, var(--rose-deep));
+  background: color-mix(in srgb, var(--accent, #ff6b9d) 12%, #fff5f8);
+  color: var(--accent, #ff6b9d);
 }
 
 .scroll-stack__title {
   font-size: 1.35rem;
-  color: var(--plum);
+  color: #4a2545;
   margin-bottom: 10px;
 }
 
 .scroll-stack__desc {
-  color: var(--plum-soft);
+  color: #7a4a6e;
   font-size: 1rem;
+  line-height: 1.65;
 }

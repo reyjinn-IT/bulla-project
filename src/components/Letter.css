@@ -1,35 +1,60 @@
 .letter {
-  padding: 100px 24px 120px;
+  padding: 120px 24px 140px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  background: var(--blush-2);
+  background: linear-gradient(180deg, #1e1230 0%, #221436 50%, #1e1230 100%);
   overflow: hidden;
+  min-height: 85vh;
 }
 
 .letter__eyebrow {
   font-family: var(--font-display);
   font-style: italic;
-  color: var(--rose-deep);
-  font-size: 1.1rem;
-  margin-bottom: 10px;
+  color: var(--pink);
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+  text-shadow: 0 0 16px var(--pink-glow);
 }
 
 .letter__heading {
-  font-size: clamp(1.6rem, 4vw, 2.2rem);
-  color: var(--plum);
-  margin-bottom: 48px;
+  font-size: clamp(2.2rem, 5.5vw, 3.2rem);
+  color: var(--moon);
+  margin-bottom: 72px;
 }
+
+/* ---------- Stage ---------- */
 
 .letter__stage {
   position: relative;
   width: 100%;
-  max-width: 620px;
-  min-height: 340px;
+  max-width: 1100px;
+  min-height: 520px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 32px;
+}
+
+/* ---------- Bear wrapper ---------- */
+
+.letter__bear-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  /* When closed: no margin → centered by parent's justify-content: center */
+  /* When opened: margin-right: auto pushes it to the left */
+  margin-right: 0;
+  transition: margin-right 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.letter__stage--opened .letter__bear-wrap {
+  margin-right: auto;
 }
 
 /* ---------- Bear + envelope trigger ---------- */
@@ -39,52 +64,71 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 14px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 20px;
+  padding: 36px;
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .letter__stage--opened .letter__trigger {
-  opacity: 0;
-  transform: scale(0.85) translateY(10px);
   pointer-events: none;
 }
 
 .letter__bear {
-  width: 150px;
-  height: 150px;
+  width: 280px;
+  height: 280px;
   animation: letter-bear-bob 3.4s ease-in-out infinite;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              height 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.letter__stage--opened .letter__bear {
+  width: 220px;
+  height: 220px;
 }
 
 @keyframes letter-bear-bob {
   0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-6px) rotate(-1.5deg); }
+  50% { transform: translateY(-8px) rotate(-1.5deg); }
 }
 
 .letter__envelope-icon {
-  width: 110px;
+  width: 200px;
   height: auto;
-  margin-top: -34px;
-  filter: drop-shadow(0 10px 18px rgba(74, 37, 69, 0.18));
-  transition: transform 0.25s ease;
+  margin-top: -56px;
+  filter: drop-shadow(0 12px 22px rgba(255, 107, 157, 0.25));
+  transition: opacity 0.4s ease, transform 0.4s ease, margin 0.4s ease;
 }
 
-.letter__trigger:hover .letter__envelope-icon {
+.letter__stage--opened .letter__envelope-icon {
+  opacity: 0;
+  transform: scale(0.5) translateY(20px);
+  margin-top: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.letter__trigger:not(:disabled):hover .letter__envelope-icon {
   transform: translateY(-4px) rotate(-2deg) scale(1.03);
 }
 
-.letter__trigger:hover .letter__bear {
+.letter__trigger:not(:disabled):hover .letter__bear {
   animation-duration: 1.6s;
 }
 
 .letter__hint {
-  font-size: 0.92rem;
-  color: var(--plum-soft);
+  font-size: 1.15rem;
+  color: var(--pink-soft);
   opacity: 0.8;
   animation: letter-hint-pulse 2.2s ease-in-out infinite;
+  transition: opacity 0.4s ease;
+}
+
+.letter__stage--opened .letter__hint {
+  opacity: 0;
 }
 
 @keyframes letter-hint-pulse {
@@ -95,42 +139,44 @@
 /* ---------- Opened letter paper ---------- */
 
 .letter__paper {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 100%;
-  max-width: 560px;
-  background: var(--paper);
-  border-radius: 20px;
-  border: 1px solid var(--soft-pink);
-  box-shadow: 0 30px 60px -24px rgba(74, 37, 69, 0.28);
-  padding: 44px 38px 34px;
+  flex: 1;
+  min-width: 0;
+  max-width: 700px;
+  background: linear-gradient(160deg, #2e1e42 0%, #241638 100%);
+  border-radius: 28px;
+  border: 1px solid var(--card-border);
+  box-shadow:
+    0 30px 60px -24px rgba(0, 0, 0, 0.5),
+    0 0 60px -10px rgba(255, 107, 157, 0.15);
+  padding: 64px 64px 52px;
   opacity: 0;
-  transform: translateY(40px) scale(0.9);
+  transform: translateX(40px) scale(0.92);
   pointer-events: none;
   transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  display: flex;
+  flex-direction: column;
 }
 
 .letter__paper--visible {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translateX(0) scale(1);
   pointer-events: auto;
-  position: relative;
 }
 
 .letter__paper-inner {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  max-height: 55vh;
+  gap: 22px;
+  max-height: 60vh;
   overflow-y: auto;
   text-align: left;
-  padding-right: 4px;
+  padding-right: 8px;
 }
 
 .letter__p {
-  color: var(--plum-soft);
-  font-size: 1rem;
+  color: #f0c0d8;
+  font-size: 1.2rem;
+  line-height: 1.85;
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -139,8 +185,9 @@
 .letter__p:first-child {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 1.2rem;
-  color: var(--rose-deep);
+  font-size: 1.5rem;
+  color: var(--pink);
+  margin-bottom: 4px;
 }
 
 .letter__paper--visible .letter__p {
@@ -150,35 +197,69 @@
 
 .letter__close {
   align-self: center;
-  margin-top: 26px;
+  margin-top: 36px;
   background: none;
-  border: 1px solid var(--soft-pink);
+  border: 1px solid var(--card-border);
   border-radius: 999px;
-  padding: 8px 22px;
-  font-size: 0.88rem;
-  color: var(--plum-soft);
+  padding: 14px 34px;
+  font-size: 1.05rem;
+  color: var(--pink-soft);
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease;
 }
 
 .letter__close:hover {
-  background: var(--soft-pink);
-  color: var(--plum);
+  background: rgba(255, 107, 157, 0.15);
+  color: var(--pink);
 }
 
-@media (max-width: 640px) {
+/* ---------- Mobile ---------- */
+
+@media (max-width: 768px) {
   .letter {
-    padding: 64px 16px 80px;
+    padding: 80px 16px 100px;
+    min-height: auto;
   }
   .letter__heading {
-    margin-bottom: 34px;
+    margin-bottom: 48px;
+  }
+
+  .letter__stage--opened {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .letter__stage--opened .letter__bear-wrap {
+    margin-right: 0;
+  }
+
+  .letter__bear {
+    width: 200px;
+    height: 200px;
+  }
+  .letter__stage--opened .letter__bear {
+    width: 160px;
+    height: 160px;
+  }
+  .letter__envelope-icon {
+    width: 150px;
+    margin-top: -44px;
   }
   .letter__paper {
-    padding: 32px 22px 26px;
-    border-radius: 16px;
+    width: 95%;
+    max-width: none;
+    padding: 44px 28px 38px;
+    border-radius: 20px;
   }
   .letter__paper-inner {
     max-height: 50vh;
+  }
+  .letter__p {
+    font-size: 1.08rem;
+  }
+  .letter__p:first-child {
+    font-size: 1.3rem;
   }
 }
 

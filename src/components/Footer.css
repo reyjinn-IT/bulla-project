@@ -1,11 +1,28 @@
 .footer {
   padding: 60px 24px 70px;
-  background: var(--plum);
+  background: linear-gradient(180deg, #1c1028 0%, #140c20 100%);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer__moon {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 35%, #fef9ef 0%, #f5e6cc 50%, #d4c49e 100%);
+  box-shadow:
+    0 0 30px 8px rgba(245, 230, 204, 0.2),
+    0 0 60px 20px rgba(245, 230, 204, 0.08);
+  opacity: 0.6;
 }
 
 .footer__note {
-  color: var(--soft-pink);
+  color: var(--pink-soft);
   font-family: var(--font-display);
   font-style: italic;
   font-size: 1.05rem;
@@ -14,8 +31,9 @@
 .footer__heart {
   display: block;
   margin-top: 14px;
-  color: var(--rose);
+  color: var(--pink);
   font-size: 1.4rem;
+  text-shadow: 0 0 16px var(--pink-glow);
 }
 
 @media (max-width: 640px) {

@@ -8,9 +8,9 @@
 .petals__item {
   position: absolute;
   top: 110%;
-  background: var(--soft-pink);
+  background: var(--pink);
   border-radius: 60% 40% 55% 45% / 55% 45% 60% 40%;
-  opacity: 0.55;
+  opacity: 0.25;
   animation-name: petal-rise;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -22,10 +22,10 @@
     opacity: 0;
   }
   10% {
-    opacity: 0.55;
+    opacity: 0.25;
   }
   90% {
-    opacity: 0.4;
+    opacity: 0.15;
   }
   100% {
     transform: translate(var(--drift), -120vh) rotate(200deg);
