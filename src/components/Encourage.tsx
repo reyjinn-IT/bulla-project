@@ -1,9 +1,16 @@
-import { HeartHandshake, Battery, TrendingUp, MessageCircleHeart, Sunrise, ShieldCheck, Sparkles } from 'lucide-react'
-import ScrollStack from './ScrollStack'
-import type { StackCard } from './ScrollStack'
+import type { CSSProperties } from 'react'
+import { HeartHandshake, Battery, TrendingUp, MessageCircleHeart, Sunrise, ShieldCheck, Sparkles, type LucideIcon } from 'lucide-react'
+import ScrollStack, { ScrollStackItem } from './ScrollStack'
 import './Encourage.css'
 
-const CARDS: StackCard[] = [
+interface Card {
+  title: string
+  desc: string
+  icon: LucideIcon
+  accent: string
+}
+
+const CARDS: Card[] = [
   {
     title: 'Kamu udah jauh lebih kuat dari yang kamu kira',
     desc: 'Semua proses berat yang udah kamu lewatin itu bukti nyata, bukan kebetulan. Aku yang liat dari samping aja bangga.',
@@ -57,7 +64,24 @@ export default function Encourage() {
           <h2 className="encourage__heading">Beberapa hal yang mau aku ingetin</h2>
           <p className="encourage__sub">tujuh catatan kecil, tapi maksudnya sama semua — aku sayang kamu, dan itu gak berubah.</p>
         </div>
-        <ScrollStack cards={CARDS} />
+
+        <ScrollStack>
+          {CARDS.map((card, i) => {
+            const Icon = card.icon
+            return (
+              <ScrollStackItem key={i}>
+                <div className="scroll-stack__top">
+                  <span className="scroll-stack__index">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="scroll-stack__icon" style={{ '--accent': card.accent } as CSSProperties}>
+                    <Icon size={20} strokeWidth={2} />
+                  </span>
+                </div>
+                <h3 className="scroll-stack__title">{card.title}</h3>
+                <p className="scroll-stack__desc">{card.desc}</p>
+              </ScrollStackItem>
+            )
+          })}
+        </ScrollStack>
       </div>
     </section>
   )

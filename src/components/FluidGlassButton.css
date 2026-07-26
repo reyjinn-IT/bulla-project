@@ -77,3 +77,12 @@
   outline: 2px solid var(--pink, #ff6f9f);
   outline-offset: 3px;
 }
+
+/* Devices/browsers without backdrop-filter support (some older Android
+   WebViews, older Safari) would otherwise render this button almost
+   see-through and hard to read — fall back to a solid tinted background. */
+@supports not (backdrop-filter: blur(1px)) {
+  .fluid-glass-btn {
+    background: rgba(86, 52, 90, 0.9);
+  }
+}

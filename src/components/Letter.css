@@ -60,6 +60,13 @@
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Gap between bear and paper only matters once the paper is actually
+   taking space in the layout (see .letter__paper:not(--visible) above) —
+   keeping it unconditional was nudging the bear ~16px off dead-center
+   before the letter was opened. */
+.letter__stage--opened {
   gap: 32px;
 }
 
@@ -183,6 +190,19 @@
   opacity: 1;
   transform: translateX(0) scale(1);
   pointer-events: auto;
+}
+
+/* Before the letter is opened, .letter__paper is invisible but was still
+   claiming flex space (flex: 1) inside .letter__stage — that pushed the
+   bear off-center to the left even though only the bear was visible.
+   Collapsing it to zero size here means .letter__stage's justify-content:
+   center centers the bear alone, exactly as it should pre-click. */
+.letter__paper:not(.letter__paper--visible) {
+  flex: 0 0 0;
+  width: 0;
+  padding-left: 0;
+  padding-right: 0;
+  overflow: hidden;
 }
 
 .letter__paper-inner {

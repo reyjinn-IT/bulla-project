@@ -83,128 +83,117 @@
   opacity: 0.85;
 }
 
-/* ── masonry grid ── */
-.gallery__masonry {
+/* ── grid, Spotify-card style ── */
+.gallery__grid {
   position: relative;
   z-index: 1;
-  max-width: 1000px;
+  max-width: 1080px;
   margin: 0 auto;
-  columns: 4;
-  column-gap: 22px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
 }
 
 .gallery__card {
   appearance: none;
-  margin: 0 0 22px;
-  padding: 0;
+  margin: 0;
+  padding: 16px;
   border: none;
+  border-radius: 10px;
   cursor: pointer;
   font: inherit;
   color: inherit;
-  background: none;
-  display: block;
-  width: 100%;
-  break-inside: avoid;
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  background: #24152b;
+  transition: background 0.25s ease, transform 0.25s ease;
+  animation: gallery-card-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  animation-delay: calc(var(--i) * 0.06s);
 }
 
-.gallery__card:hover {
-  transform: translateY(-6px) scale(1.03);
+@keyframes gallery-card-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.gallery__card:hover,
+.gallery__card:focus-visible {
+  background: #33203a;
+  transform: translateY(-4px);
 }
 
 .gallery__card:focus-visible {
   outline: 2px solid var(--pink);
-  outline-offset: 4px;
-  border-radius: 20px;
+  outline-offset: 2px;
 }
 
-/* ── card inner ── */
-.gallery__card-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: linear-gradient(160deg, #fff4f8 0%, #ffe4ef 40%, #ffd6e6 100%);
-  border-radius: 18px;
-  padding: 10px 10px 14px;
-  border: 1.5px solid #ffd0e2;
-  box-shadow:
-    0 8px 28px -12px rgba(255, 111, 159, 0.25),
-    0 0 0 1px rgba(255, 255, 255, 0.3) inset,
-    0 2px 6px rgba(255, 111, 159, 0.1);
-  transform: rotate(var(--rotate));
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              box-shadow 0.4s ease;
-}
-
-.gallery__card:hover .gallery__card-inner {
-  transform: rotate(0deg);
-  box-shadow:
-    0 16px 40px -12px rgba(255, 111, 159, 0.35),
-    0 0 0 1px rgba(255, 255, 255, 0.4) inset,
-    0 4px 12px rgba(255, 111, 159, 0.18);
-}
-
-.gallery__card-img {
-  display: block;
+.gallery__card-art {
+  position: relative;
   width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 6px;
   overflow: hidden;
-  border-radius: 12px;
-  background: #fce4ec;
+  background: #3d2645;
+  box-shadow: 0 8px 24px -10px rgba(0, 0, 0, 0.6);
 }
 
-.gallery__card-img img {
+.gallery__card-art img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.5s ease;
+  transition: transform 0.4s ease;
 }
 
-.gallery__card:hover .gallery__card-img img {
-  transform: scale(1.06);
+.gallery__card:hover .gallery__card-art img {
+  transform: scale(1.05);
 }
 
-/* ── size variants for masonry ── */
-.gallery__card--tall .gallery__card-img {
-  aspect-ratio: 3 / 4;
-}
-
-.gallery__card--wide .gallery__card-img {
-  aspect-ratio: 16 / 9;
-}
-
-.gallery__card--square .gallery__card-img {
-  aspect-ratio: 1 / 1;
-}
-
-.gallery__card--big .gallery__card-img {
-  aspect-ratio: 4 / 5;
-}
-
-/* ── card label ── */
-.gallery__card-label {
+/* ── hover-reveal action button (Spotify's floating play button) ── */
+.gallery__card-play {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 6px;
-  margin-top: 10px;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 0.88rem;
-  color: #8a4a6a;
-  letter-spacing: 0.01em;
+  justify-content: center;
+  background: var(--pink);
+  color: #1c1220;
+  font-size: 1.1rem;
+  box-shadow: 0 8px 18px -4px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-.gallery__card-heart {
-  font-size: 0.7rem;
-  color: var(--pink);
-  animation: heart-beat 1.4s ease-in-out infinite;
-  display: inline-block;
+.gallery__card:hover .gallery__card-play,
+.gallery__card:focus-visible .gallery__card-play {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-@keyframes heart-beat {
-  0%, 100% { transform: scale(1); }
-  20% { transform: scale(1.25); }
-  40% { transform: scale(1); }
+.gallery__card-title {
+  margin-top: 14px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--moon);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gallery__card-sub {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: var(--lavender);
+  opacity: 0.75;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ── lightbox ── */
@@ -271,6 +260,12 @@
   animation: heart-beat 1.4s ease-in-out infinite;
 }
 
+@keyframes heart-beat {
+  0%, 100% { transform: scale(1); }
+  20% { transform: scale(1.25); }
+  40% { transform: scale(1); }
+}
+
 .gallery__lightbox-close {
   position: absolute;
   top: 22px;
@@ -298,12 +293,9 @@
 
 /* ── responsive ── */
 @media (max-width: 900px) {
-  .gallery__masonry {
-    columns: 3;
-    column-gap: 16px;
-  }
-  .gallery__card {
-    margin-bottom: 16px;
+  .gallery__grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 16px;
   }
 }
 
@@ -311,23 +303,23 @@
   .gallery {
     padding: 64px 16px 84px;
   }
-  .gallery__masonry {
-    columns: 2;
-    column-gap: 12px;
+  .gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
   .gallery__card {
-    margin-bottom: 12px;
+    padding: 10px;
   }
-  .gallery__card-inner {
-    padding: 8px 8px 12px;
-    border-radius: 14px;
+  .gallery__card-play {
+    width: 36px;
+    height: 36px;
   }
-  .gallery__card-img {
-    border-radius: 10px;
+  .gallery__card-title {
+    font-size: 0.86rem;
+    margin-top: 10px;
   }
-  .gallery__card-label {
-    font-size: 0.78rem;
-    margin-top: 8px;
+  .gallery__card-sub {
+    font-size: 0.74rem;
   }
   .gallery__lightbox-close {
     top: 14px;
@@ -344,16 +336,8 @@
   }
 }
 
-@media (max-width: 400px) {
-  .gallery__masonry {
-    columns: 1;
-    max-width: 280px;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .gallery__sparkle,
-  .gallery__card-heart,
   .gallery__lightbox-heart {
     animation: none;
     opacity: 0.5;
@@ -364,9 +348,12 @@
   .gallery__lightbox-frame {
     animation: none;
   }
+  .gallery__card {
+    animation: none;
+  }
   .gallery__card,
-  .gallery__card-inner,
-  .gallery__card-img img {
+  .gallery__card-art img,
+  .gallery__card-play {
     transition: none;
   }
 }

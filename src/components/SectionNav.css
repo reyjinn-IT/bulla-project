@@ -6,7 +6,7 @@
   z-index: 40;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 20px;
 }
 
 .section-nav__dot {
@@ -19,6 +19,15 @@
   padding: 0;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+/* Invisible hit-area: keeps the dot small visually but gives it a proper
+   ~44px tappable zone, since the visible dot alone is much too small to
+   reliably hit on a touchscreen. */
+.section-nav__dot::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
 }
 
 .section-nav__dot:hover {
@@ -59,7 +68,7 @@
 @media (max-width: 640px) {
   .section-nav {
     right: 10px;
-    gap: 10px;
+    gap: 16px;
   }
   .section-nav__dot {
     width: 8px;

@@ -5,19 +5,17 @@ import './Gallery.css'
 interface Photo {
   src: string
   caption: string
-  rotate: number
-  size: 'tall' | 'wide' | 'square' | 'big'
 }
 
 const PHOTOS: Photo[] = [
-  { src: '/photos/1.jpg', rotate: -3, caption: 'momen seru bareng', size: 'tall' },
-  { src: '/photos/2.jpg', rotate: 2, caption: 'ketawa bareng', size: 'square' },
-  { src: '/photos/3.jpg', rotate: -1, caption: 'jalan-jalan bareng', size: 'wide' },
-  { src: '/photos/4.jpg', rotate: 3, caption: 'random tapi berkesan', size: 'big' },
-  { src: '/photos/5.jpg', rotate: -2, caption: 'senyum manis', size: 'square' },
-  { src: '/photos/6.jpg', rotate: 1, caption: 'hari yang indah', size: 'tall' },
-  { src: '/photos/7.jpg', rotate: -3, caption: 'selalu bareng', size: 'wide' },
-  { src: '/photos/8.jpg', rotate: 2, caption: 'cerita kita', size: 'square' },
+  { src: '/photos/1.jpg', caption: 'momen seru bareng' },
+  { src: '/photos/2.jpg', caption: 'ketawa bareng' },
+  { src: '/photos/3.jpg', caption: 'jalan-jalan bareng' },
+  { src: '/photos/4.jpg', caption: 'random tapi berkesan' },
+  { src: '/photos/5.jpg', caption: 'senyum manis' },
+  { src: '/photos/6.jpg', caption: 'hari yang indah' },
+  { src: '/photos/7.jpg', caption: 'selalu bareng' },
+  { src: '/photos/8.jpg', caption: 'cerita kita' },
 ]
 
 const SPARKLES = [
@@ -54,35 +52,34 @@ export default function Gallery() {
       ))}
 
       <div ref={ref} className={`gallery__content ${visible ? 'gallery__content--visible' : ''}`}>
-      <div className="gallery__header">
-        <span className="gallery__ornament" aria-hidden="true">— ✿ —</span>
-        <h2 className="gallery__heading">Kenangan Bareng Bulla</h2>
-        <p className="gallery__sub">
-          setiap momen jadi cerita indah yang pantas dikenang
-        </p>
-      </div>
+        <div className="gallery__header">
+          <span className="gallery__ornament" aria-hidden="true">— ✿ —</span>
+          <h2 className="gallery__heading">Kenangan Bareng Bulla</h2>
+          <p className="gallery__sub">
+            setiap momen jadi cerita indah yang pantas dikenang
+          </p>
+        </div>
 
-      <div className="gallery__masonry">
-        {PHOTOS.map((photo, i) => (
-          <button
-            type="button"
-            key={i}
-            className={`gallery__card gallery__card--${photo.size}`}
-            style={{ '--rotate': `${photo.rotate}deg` } as React.CSSProperties}
-            onClick={() => setActive(photo)}
-          >
-            <span className="gallery__card-inner">
-              <span className="gallery__card-img">
+        <div className="gallery__grid">
+          {PHOTOS.map((photo, i) => (
+            <button
+              type="button"
+              key={i}
+              className="gallery__card"
+              style={{ '--i': i } as React.CSSProperties}
+              onClick={() => setActive(photo)}
+            >
+              <div className="gallery__card-art">
                 <img src={photo.src} alt={photo.caption} loading="lazy" />
-              </span>
-              <span className="gallery__card-label">
-                <span className="gallery__card-heart" aria-hidden="true">♥</span>
-                {photo.caption}
-              </span>
-            </span>
-          </button>
-        ))}
-      </div>
+                <span className="gallery__card-play" aria-hidden="true">
+                  ♥
+                </span>
+              </div>
+              <span className="gallery__card-title">{photo.caption}</span>
+              <span className="gallery__card-sub">kenangan bareng Bulla</span>
+            </button>
+          ))}
+        </div>
       </div>
 
       {active && (
