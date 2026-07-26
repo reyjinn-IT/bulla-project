@@ -14,9 +14,18 @@ const LETTER_PARAGRAPHS = [
 
 const FLOWER_PETALS = 12
 
+const FLOWER_MESSAGES = [
+  'kamu istimewa, Bulla',
+  'makasih udah jadi kamu apa adanya',
+  'kamu pantas dapet yang baik-baik',
+  'satu lagi ya: aku bangga sama kamu',
+  'pelan-pelan aja, aku tetep di sini',
+]
+
 export default function Letter() {
   const [opened, setOpened] = useState(false)
   const [flowerShown, setFlowerShown] = useState(false)
+  const [flowerMsg, setFlowerMsg] = useState(FLOWER_MESSAGES[0])
 
   return (
     <section className="letter" id="pesan">
@@ -100,7 +109,10 @@ export default function Letter() {
         <button
           type="button"
           className="letter__surprise-btn"
-          onClick={() => setFlowerShown(true)}
+          onClick={() => {
+            setFlowerMsg(FLOWER_MESSAGES[Math.floor(Math.random() * FLOWER_MESSAGES.length)])
+            setFlowerShown(true)
+          }}
           disabled={flowerShown}
           aria-label="Kejutan!"
         >
@@ -152,7 +164,7 @@ export default function Letter() {
 
             {/* message */}
             <p className="letter__flower-msg">
-              kamu istimewa, Bulla <span className="letter__flower-msg-heart">♥</span>
+              {flowerMsg} <span className="letter__flower-msg-heart">♥</span>
             </p>
 
             <button

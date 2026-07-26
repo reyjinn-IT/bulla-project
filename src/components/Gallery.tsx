@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useOnScreen } from '../../useOnScreen'
 import './Gallery.css'
 
 interface Photo {
@@ -32,10 +33,10 @@ const SPARKLES = [
 
 export default function Gallery() {
   const [active, setActive] = useState<Photo | null>(null)
+  const { ref, visible } = useOnScreen<HTMLDivElement>(0.12)
 
   return (
     <section className="gallery" id="galeri">
-      {/* decorative floating sparkles */}
       {SPARKLES.map((s, i) => (
         <span
           key={i}
@@ -52,6 +53,7 @@ export default function Gallery() {
         </span>
       ))}
 
+      <div ref={ref} className={`gallery__content ${visible ? 'gallery__content--visible' : ''}`}>
       <div className="gallery__header">
         <span className="gallery__ornament" aria-hidden="true">— ✿ —</span>
         <h2 className="gallery__heading">Kenangan Bareng Bulla</h2>
@@ -80,6 +82,7 @@ export default function Gallery() {
             </span>
           </button>
         ))}
+      </div>
       </div>
 
       {active && (

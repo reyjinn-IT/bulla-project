@@ -4,16 +4,20 @@ import Encourage from './components/Encourage'
 import Gallery from './components/Gallery'
 import Signature from './components/Signature'
 import Footer from './components/Footer'
+import SectionNav from './components/SectionNav'
 
 export default function App() {
   return (
-    <main>
-      <Hero />
-      <Letter />
-      <Encourage />
-      <Gallery />
-      <Signature />
-      <Footer />
-    </main>
+    <>
+      <SectionNav />
+      <main>
+        <Hero />
+        <Letter />
+        <Encourage />
+        <Gallery />
+        <Signature />
+        <Footer />
+      </main>
+    </>
   )
 }

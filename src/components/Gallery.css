@@ -1,9 +1,33 @@
 .gallery {
   position: relative;
   padding: 100px 24px 120px;
-  background: linear-gradient(175deg, #3b2248 0%, #4a2c5a 30%, #563460 60%, #4a2c50 100%);
+  background: linear-gradient(175deg, #341c3a 0%, #4a2c5a 25%, #5c3568 55%, #4a2c50 85%, #402544 100%);
   text-align: center;
   overflow: hidden;
+}
+
+.gallery::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 160px;
+  background: radial-gradient(ellipse at center, rgba(255, 214, 230, 0.12), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.gallery__content {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.gallery__content--visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ── decorative sparkles ── */

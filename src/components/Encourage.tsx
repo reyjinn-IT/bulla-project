@@ -51,10 +51,14 @@ const CARDS: StackCard[] = [
 export default function Encourage() {
   return (
     <section className="encourage" id="semangat">
-      <span className="encourage__eyebrow">buat kamu baca pelan-pelan</span>
-      <h2 className="encourage__heading">Beberapa hal yang mau aku ingetin</h2>
-      <p className="encourage__sub">tujuh catatan kecil, tapi maksudnya sama semua — aku sayang kamu, dan itu gak berubah.</p>
-      <ScrollStack cards={CARDS} />
+      <div className="encourage__layout">
+        <div className="encourage__intro">
+          <span className="encourage__eyebrow">buat kamu baca pelan-pelan</span>
+          <h2 className="encourage__heading">Beberapa hal yang mau aku ingetin</h2>
+          <p className="encourage__sub">tujuh catatan kecil, tapi maksudnya sama semua — aku sayang kamu, dan itu gak berubah.</p>
+        </div>
+        <ScrollStack cards={CARDS} />
+      </div>
     </section>
   )
 }

@@ -1,0 +1,82 @@
+.section-nav {
+  position: fixed;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.section-nav__dot {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 194, 217, 0.4);
+  background: rgba(255, 194, 217, 0.15);
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.section-nav__dot:hover {
+  border-color: var(--pink);
+  background: rgba(255, 111, 159, 0.3);
+}
+
+.section-nav__dot--active {
+  width: 12px;
+  height: 12px;
+  background: var(--pink);
+  border-color: var(--pink);
+  box-shadow: 0 0 12px rgba(255, 111, 159, 0.6);
+}
+
+.section-nav__tooltip {
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  font-size: 0.78rem;
+  color: var(--pink-soft);
+  background: rgba(56, 33, 64, 0.9);
+  border: 1px solid rgba(255, 194, 217, 0.2);
+  border-radius: 8px;
+  padding: 4px 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.section-nav__dot:hover .section-nav__tooltip,
+.section-nav__dot:focus-visible .section-nav__tooltip {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .section-nav {
+    right: 10px;
+    gap: 10px;
+  }
+  .section-nav__dot {
+    width: 8px;
+    height: 8px;
+  }
+  .section-nav__dot--active {
+    width: 10px;
+    height: 10px;
+  }
+  .section-nav__tooltip {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-nav__dot,
+  .section-nav__tooltip {
+    transition: none;
+  }
+}

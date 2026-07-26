@@ -4,7 +4,7 @@ import './Hero.css'
 
 export default function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
       {/* Moon */}
       <div className="hero__moon" aria-hidden="true" />
       {/* Moon glow */}
