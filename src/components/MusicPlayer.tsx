@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import './MusicPlayer.css'
 
-const TRACK_SRC = '/song/lagu.mp3'
+const TRACK_SRC = '/public/song/lagu.mp3'
 
 /**
  * Background music that tries to autoplay as soon as the page loads.
