@@ -1,63 +1,65 @@
 @import "tailwindcss";
 
-/* 1. Registrasi Theme — Moonlit Night Sky (softened) */
+/* 1. Registrasi Theme — Dusk Rose Sky (lightened, still pink, touch of black) */
 @theme {
   --font-display: 'Fraunces', serif;
   --font-body: 'Manrope', sans-serif;
 
-  --color-night: #1a1028;
-  --color-night-2: #201430;
-  --color-night-soft: #2a1a3a;
-  --color-pink: #ff6b9d;
-  --color-pink-deep: #e84393;
-  --color-pink-soft: #f8a5c2;
-  --color-pink-glow: #ff6b9d40;
-  --color-moon: #f5e6cc;
-  --color-moon-glow: #f5e6cc30;
+  --color-ink: #170f1c;
+  --color-night: #3a2140;
+  --color-night-2: #452a49;
+  --color-night-soft: #56345a;
+  --color-pink: #ff6f9f;
+  --color-pink-deep: #e0508f;
+  --color-pink-soft: #ffc2d9;
+  --color-pink-glow: #ff6f9f40;
+  --color-moon: #f8e3cc;
+  --color-moon-glow: #f8e3cc30;
   --color-star: #ffffff;
-  --color-lavender: #c8b8da;
-  --color-card: #2a1a3a;
-  --color-card-border: #ff6b9d30;
+  --color-lavender: #dcc3e6;
+  --color-card: #56345a;
+  --color-card-border: #ff6f9f35;
 }
 
 /* 2. Custom CSS Variables & shadcn UI */
 :root {
-  --night: #1a1028;
-  --night-2: #201430;
-  --night-soft: #2a1a3a;
-  --pink: #ff6b9d;
-  --pink-deep: #e84393;
-  --pink-soft: #f8a5c2;
-  --pink-glow: #ff6b9d40;
-  --moon: #f5e6cc;
-  --moon-glow: #f5e6cc30;
+  --ink: #170f1c;
+  --night: #3a2140;
+  --night-2: #452a49;
+  --night-soft: #56345a;
+  --pink: #ff6f9f;
+  --pink-deep: #e0508f;
+  --pink-soft: #ffc2d9;
+  --pink-glow: #ff6f9f40;
+  --moon: #f8e3cc;
+  --moon-glow: #f8e3cc30;
   --star: #ffffff;
-  --lavender: #c8b8da;
-  --card: #2a1a3a;
-  --card-border: #ff6b9d30;
+  --lavender: #dcc3e6;
+  --card: #56345a;
+  --card-border: #ff6f9f35;
 
   --font-display: 'Fraunces', serif;
   --font-body: 'Manrope', sans-serif;
 
-  --background: #1a1028;
-  --foreground: #f8a5c2;
-  --card: #2a1a3a;
-  --card-foreground: #f8a5c2;
-  --popover: #2a1a3a;
-  --popover-foreground: #f8a5c2;
-  --primary: #ff6b9d;
-  --primary-foreground: #1a1028;
-  --secondary: #201430;
-  --secondary-foreground: #f8a5c2;
-  --muted: #201430;
-  --muted-foreground: #c8b8da;
-  --accent: #2a1a3a;
-  --accent-foreground: #f8a5c2;
-  --destructive: #e84393;
+  --background: #3a2140;
+  --foreground: #ffc2d9;
+  --card: #56345a;
+  --card-foreground: #ffc2d9;
+  --popover: #56345a;
+  --popover-foreground: #ffc2d9;
+  --primary: #ff6f9f;
+  --primary-foreground: #170f1c;
+  --secondary: #452a49;
+  --secondary-foreground: #ffc2d9;
+  --muted: #452a49;
+  --muted-foreground: #dcc3e6;
+  --accent: #56345a;
+  --accent-foreground: #ffc2d9;
+  --destructive: #e0508f;
   --destructive-foreground: #ffffff;
-  --border: #ff6b9d30;
-  --input: #ff6b9d30;
-  --ring: #ff6b9d;
+  --border: #ff6f9f35;
+  --input: #ff6f9f35;
+  --ring: #ff6f9f;
   --radius: 0.75rem;
 }
 
@@ -117,9 +119,9 @@ body::before {
     radial-gradient(1px 1px at 5% 90%, rgba(255,255,255,0.4), transparent),
     radial-gradient(1px 1px at 45% 25%, rgba(255,255,255,0.6), transparent),
     radial-gradient(1px 1px at 75% 50%, rgba(255,255,255,0.5), transparent),
-    radial-gradient(1.2px 1.2px at 20% 48%, rgba(248,165,194,0.5), transparent),
-    radial-gradient(1.2px 1.2px at 60% 62%, rgba(248,165,194,0.4), transparent),
-    radial-gradient(1.2px 1.2px at 88% 18%, rgba(248,165,194,0.5), transparent);
+    radial-gradient(1.2px 1.2px at 20% 48%, rgba(255,194,217,0.55), transparent),
+    radial-gradient(1.2px 1.2px at 60% 62%, rgba(255,194,217,0.45), transparent),
+    radial-gradient(1.2px 1.2px at 88% 18%, rgba(255,194,217,0.55), transparent);
   animation: stars-twinkle 6s ease-in-out infinite alternate;
 }
 

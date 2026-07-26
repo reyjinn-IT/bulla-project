@@ -1,6 +1,6 @@
 .footer {
   padding: 60px 24px 70px;
-  background: linear-gradient(180deg, #1c1028 0%, #140c20 100%);
+  background: linear-gradient(180deg, #341c3a 0%, #1c1220 100%);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -14,7 +14,7 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: radial-gradient(circle at 38% 35%, #fef9ef 0%, #f5e6cc 50%, #d4c49e 100%);
+  background: radial-gradient(circle at 38% 35%, #fdf6ea 0%, #f8e3cc 50%, #dcc296 100%);
   box-shadow:
     0 0 30px 8px rgba(245, 230, 204, 0.2),
     0 0 60px 20px rgba(245, 230, 204, 0.08);

@@ -3,20 +3,26 @@ import './Letter.css'
 
 const LETTER_PARAGRAPHS = [
   'Bulla,',
-  'Gw sebenernya bingung mulai dari mana, jadi aku mulai aja dari yang paling jujur: makasih, ya. Bukan basa-basi — makasih karena selama ini kamu tetep jadi kamu, di tengah semua hal yang lagi kamu bawa sendirian.',
-  'Gw tau capeknya gak selalu keliatan. Kadang kamu masih sempet ketawa, masih sempet nanyain kabar orang lain, padahal di dalem kepala kamu sendiri lagi rame banget. Gw lihat itu, dan itu gak luput gitu aja di mata aku.',
-  'Kamu gak harus selalu kuat di depan aku. Boleh capek, boleh nangis, boleh bilang "aku lagi gak baik-baik aja" tanpa harus jelasin panjang lebar kenapa. Gw tetep di sini, dengan versi kamu yang mana pun itu.',
+  'Aku sebenernya bingung mulai dari mana, jadi aku mulai aja dari yang paling jujur: makasih, ya. Bukan basa-basi — makasih karena selama ini kamu tetep jadi kamu, di tengah semua hal yang lagi kamu bawa sendirian.',
+  'Aku tau capeknya gak selalu keliatan. Kadang kamu masih sempet ketawa, masih sempet nanyain kabar orang lain, padahal di dalem kepala kamu sendiri lagi rame banget. Aku lihat itu, dan itu gak luput gitu aja di mata aku.',
+  'Kamu gak harus selalu kuat di depan aku. Boleh capek, boleh nangis, boleh bilang "aku lagi gak baik-baik aja" tanpa harus jelasin panjang lebar kenapa. Aku tetep di sini, dengan versi kamu yang mana pun itu.',
   'Progres kamu itu nyata, walau kadang kamu ngerasa jalan di tempat. Setiap langkah kecil yang kamu ambil pas lagi berat-beratnya, itu udah lebih dari cukup buat dibanggain.',
   'Jadi tolong, pelan-pelan aja. Gak perlu buru-buru nyelesein semuanya sekarang. Istirahat itu bagian dari usaha juga, bukan kebalikannya.',
   'Surat kecil ini cuma pengingat sederhana: ada aku, kapan pun kamu butuh. Makasih udah jadi Bulla yang ini — yang lagi berjuang, dan tetep baik di tengah semuanya.',
   '— dari yang selalu dukung kamu, diam-diam maupun terang-terangan.',
 ]
 
+const FLOWER_PETALS = 12
+
 export default function Letter() {
   const [opened, setOpened] = useState(false)
+  const [flowerShown, setFlowerShown] = useState(false)
 
   return (
     <section className="letter" id="pesan">
+      {/* moon-sky background overlay */}
+      <div className="letter__bg" aria-hidden="true" />
+
       <span className="letter__eyebrow">sebuah surat kecil</span>
       <h2 className="letter__heading">Klik amplopnya, Bulla</h2>
 
@@ -88,6 +94,77 @@ export default function Letter() {
           </button>
         </div>
       </div>
+
+      {/* ── Surprise notification badge ── */}
+      <div className={`letter__surprise-badge ${opened ? 'letter__surprise-badge--visible' : ''}`}>
+        <button
+          type="button"
+          className="letter__surprise-btn"
+          onClick={() => setFlowerShown(true)}
+          disabled={flowerShown}
+          aria-label="Kejutan!"
+        >
+          <span className="letter__surprise-icon">🎀</span>
+          <span className="letter__surprise-text">ada kejutan buat kamu!</span>
+          <span className="letter__surprise-dot" />
+        </button>
+      </div>
+
+      {/* ── Surprise flower overlay ── */}
+      {flowerShown && (
+        <div className="letter__flower-overlay" onClick={() => setFlowerShown(false)}>
+          <div className="letter__flower-stage">
+            {/* sparkles around flower */}
+            {[...Array(20)].map((_, i) => (
+              <span
+                key={`spark-${i}`}
+                className="letter__flower-sparkle"
+                style={{
+                  '--angle': `${(360 / 20) * i}deg`,
+                  '--dist': `${80 + Math.random() * 100}px`,
+                  '--delay': `${0.1 + Math.random() * 0.5}s`,
+                  '--size': `${6 + Math.random() * 10}px`,
+                } as React.CSSProperties}
+              >
+                ✦
+              </span>
+            ))}
+
+            {/* the flower */}
+            <div className="letter__flower">
+              {/* petals */}
+              {[...Array(FLOWER_PETALS)].map((_, i) => (
+                <span
+                  key={`petal-${i}`}
+                  className="letter__petal"
+                  style={{
+                    '--i': i,
+                    '--total': FLOWER_PETALS,
+                    '--delay': `${0.05 * i}s`,
+                  } as React.CSSProperties}
+                />
+              ))}
+              {/* flower center */}
+              <span className="letter__flower-center">
+                <span className="letter__flower-face">🌸</span>
+              </span>
+            </div>
+
+            {/* message */}
+            <p className="letter__flower-msg">
+              kamu istimewa, Bulla <span className="letter__flower-msg-heart">♥</span>
+            </p>
+
+            <button
+              type="button"
+              className="letter__flower-close"
+              onClick={() => setFlowerShown(false)}
+            >
+              tutup
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

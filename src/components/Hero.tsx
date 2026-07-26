@@ -27,12 +27,10 @@ export default function Hero() {
         ))}
       </div>
       <div className="hero__inner">
-        <span className="hero__eyebrow">buat Bulla yang lagi baca ini</span>
-        <BlurText as="h1" text="Terima kasih, Bulla" className="hero__title" />
-        <BlurText as="h2" text="tetap semangat, ya!" className="hero__title" delay={300} />
+        <span className="hero__eyebrow">holaa</span>
+        <BlurText as="h1" text="Bulla" className="hero__title" />
         <p className="hero__sub">
-          Halaman kecil ini aku bikin khusus buat Bulla, biar tau satu hal: usaha kamu selama ini
-          kelihatan, dan aku bersyukur ada kamu.
+          Sebuah nama yang indah, terkesan asing tapi unik yang terdengar ditelingaku.
         </p>
         <FluidGlassButton onClick={() => document.getElementById('pesan')?.scrollIntoView({ behavior: 'smooth' })}>
           Baca pesannya ↓

@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(180deg, #120c1e 0%, #1a1028 40%, #221430 70%, #1e1230 100%);
+  background: linear-gradient(180deg, #1c1220 0%, #3a2140 40%, #4a2c4e 70%, #402544 100%);
   padding: 32px 24px;
   overflow: hidden;
 }
@@ -19,7 +19,7 @@
   width: clamp(100px, 18vw, 200px);
   height: clamp(100px, 18vw, 200px);
   border-radius: 50%;
-  background: radial-gradient(circle at 38% 35%, #fef9ef 0%, #f5e6cc 40%, #e8d5b0 70%, #d4c49e 100%);
+  background: radial-gradient(circle at 38% 35%, #fdf6ea 0%, #f8e3cc 40%, #ecd4ac 70%, #dcc296 100%);
   box-shadow:
     0 0 40px 10px rgba(245, 230, 204, 0.3),
     0 0 80px 30px rgba(245, 230, 204, 0.15),

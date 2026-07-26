@@ -18,7 +18,7 @@
     0 -6px 12px rgba(0, 0, 0, 0.2) inset,
     0 10px 24px rgba(255, 107, 157, 0.12),
     0 0 40px -8px rgba(255, 107, 157, 0.15);
-  color: var(--pink-soft, #f8a5c2);
+  color: var(--pink-soft, #ffc2d9);
   font-weight: 600;
   font-size: 0.98rem;
   cursor: pointer;
@@ -74,6 +74,6 @@
 }
 
 .fluid-glass-btn:focus-visible {
-  outline: 2px solid var(--pink, #ff6b9d);
+  outline: 2px solid var(--pink, #ff6f9f);
   outline-offset: 3px;
 }
