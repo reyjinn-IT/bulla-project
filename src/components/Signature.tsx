@@ -11,9 +11,9 @@ export default function Signature() {
         <p className="signature__label">made by</p>
         <Lanyard
           photo="/photos/me.jpg"
-          name="JiNn"
-          role="Web Developer"
-          idNumber="2025-JINN-0001"
+          name="Rey"
+          role="hehe"
+          idNumber="2607-Rey-2026"
           ropeColor={['#c8a8d8', '#8a5a9a', '#b888c8']}
           height={420}
         />

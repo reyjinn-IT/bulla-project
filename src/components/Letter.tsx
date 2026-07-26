@@ -3,23 +3,17 @@ import './Letter.css'
 
 const LETTER_PARAGRAPHS = [
   'Bulla,',
-  'Aku sebenernya bingung mulai dari mana, jadi aku mulai aja dari yang paling jujur: makasih, ya. Bukan basa-basi — makasih karena selama ini kamu tetep jadi kamu, di tengah semua hal yang lagi kamu bawa sendirian.',
-  'Aku tau capeknya gak selalu keliatan. Kadang kamu masih sempet ketawa, masih sempet nanyain kabar orang lain, padahal di dalem kepala kamu sendiri lagi rame banget. Aku lihat itu, dan itu gak luput gitu aja di mata aku.',
-  'Kamu gak harus selalu kuat di depan aku. Boleh capek, boleh nangis, boleh bilang "aku lagi gak baik-baik aja" tanpa harus jelasin panjang lebar kenapa. Aku tetep di sini, dengan versi kamu yang mana pun itu.',
-  'Progres kamu itu nyata, walau kadang kamu ngerasa jalan di tempat. Setiap langkah kecil yang kamu ambil pas lagi berat-beratnya, itu udah lebih dari cukup buat dibanggain.',
-  'Jadi tolong, pelan-pelan aja. Gak perlu buru-buru nyelesein semuanya sekarang. Istirahat itu bagian dari usaha juga, bukan kebalikannya.',
-  'Surat kecil ini cuma pengingat sederhana: ada aku, kapan pun kamu butuh. Makasih udah jadi Bulla yang ini — yang lagi berjuang, dan tetep baik di tengah semuanya.',
-  '— dari yang selalu dukung kamu, diam-diam maupun terang-terangan.',
+  'Aku sebenernya bingung mulai dari mana, tapi aku mau mulai dari satu hal yang paling jujur: terimakasih banget ya, kamu udah hadir di dunia ini.',
+  'Jujur, awalnya aku kira kamu itu cuma wanita yang sekadar cantik. Tapi ternyata aku salah besar. Kamu jauh lebih dari itu—kamu wanita yang begitu baik, dan kehadiran kamu selalu jadi pengingat buat aku untuk terus berusaha jadi orang baik juga.',
+  'Setiap senyuman, kebaikan kecil yang kamu lakuin selalu bikin aku kagum. Kamu punya energi positif yang bikin tempat di sekitar kamu kerasa lebih hangat.',
+  'Surat kecil ini cuma pengingat sederhana: makasih udah jadi Bulla yang sekarang—wanita yang gak cuma cantik di luar, tapi juga punya hati yang luar biasa baik.',
+  'Tetep jadi diri kamu yang sekarang ya. Ada aku di sini, yang bakal selalu dukung kamu.',
 ]
 
 const FLOWER_PETALS = 12
 
 const FLOWER_MESSAGES = [
-  'kamu istimewa, Bulla',
-  'makasih udah jadi kamu apa adanya',
-  'kamu pantas dapet yang baik-baik',
-  'satu lagi ya: aku bangga sama kamu',
-  'pelan-pelan aja, aku tetep di sini',
+  'kalo kata LANY kamu itu "prettiest thing i`ve ever seen"',
 ]
 
 export default function Letter() {
@@ -117,7 +111,7 @@ export default function Letter() {
           aria-label="Kejutan!"
         >
           <span className="letter__surprise-icon">🎀</span>
-          <span className="letter__surprise-text">ada kejutan buat kamu!</span>
+          <span className="letter__surprise-text">klik ini!</span>
           <span className="letter__surprise-dot" />
         </button>
       </div>
@@ -164,7 +158,7 @@ export default function Letter() {
 
             {/* message */}
             <p className="letter__flower-msg">
-              {flowerMsg} <span className="letter__flower-msg-heart">♥</span>
+              {flowerMsg} <span className="letter__flower-msg-heart"></span>
             </p>
 
             <button

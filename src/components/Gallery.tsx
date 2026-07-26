@@ -8,14 +8,14 @@ interface Photo {
 }
 
 const PHOTOS: Photo[] = [
-  { src: '/photos/1.jpg', caption: 'momen seru bareng' },
-  { src: '/photos/2.jpg', caption: 'ketawa bareng' },
-  { src: '/photos/3.jpg', caption: 'jalan-jalan bareng' },
-  { src: '/photos/4.jpg', caption: 'random tapi berkesan' },
-  { src: '/photos/5.jpg', caption: 'senyum manis' },
-  { src: '/photos/6.jpg', caption: 'hari yang indah' },
-  { src: '/photos/7.jpg', caption: 'selalu bareng' },
-  { src: '/photos/8.jpg', caption: 'cerita kita' },
+  { src: '/photos/1.jpg', caption: 'kids with sparkling eye' },
+  { src: '/photos/2.jpg', caption: 'OMGG' },
+  { src: '/photos/3.jpg', caption: 'Bulla berkumis' },
+  { src: '/photos/4.jpg', caption: 'Bulla Seperi Idol' },
+  { src: '/photos/5.jpg', caption: 'ini kah mbg?' },
+  { src: '/photos/6.jpg', caption: 'Lukisan' },
+  { src: '/photos/7.jpg', caption: 'beautiful bouquet, and the girl also.' },
+  { src: '/photos/8.jpg', caption: 'shape of my heart bgt ini mah' },
 ]
 
 const SPARKLES = [
@@ -54,9 +54,9 @@ export default function Gallery() {
       <div ref={ref} className={`gallery__content ${visible ? 'gallery__content--visible' : ''}`}>
         <div className="gallery__header">
           <span className="gallery__ornament" aria-hidden="true">— ✿ —</span>
-          <h2 className="gallery__heading">Kenangan Bareng Bulla</h2>
+          <h2 className="gallery__heading">Gallery Bulla</h2>
           <p className="gallery__sub">
-            setiap momen jadi cerita indah yang pantas dikenang
+            isinya maha karya tuhan yang indahnya bikin terus bersyukur
           </p>
         </div>
 
@@ -76,7 +76,7 @@ export default function Gallery() {
                 </span>
               </div>
               <span className="gallery__card-title">{photo.caption}</span>
-              <span className="gallery__card-sub">kenangan bareng Bulla</span>
+              <span className="gallery__card-sub">Gallery Bulla</span>
             </button>
           ))}
         </div>

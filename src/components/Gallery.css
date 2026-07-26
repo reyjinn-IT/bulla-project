@@ -304,22 +304,22 @@
     padding: 64px 16px 84px;
   }
   .gallery__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
   .gallery__card {
-    padding: 10px;
+    padding: 14px;
   }
   .gallery__card-play {
     width: 36px;
     height: 36px;
   }
   .gallery__card-title {
-    font-size: 0.86rem;
+    font-size: 0.9rem;
     margin-top: 10px;
   }
   .gallery__card-sub {
-    font-size: 0.74rem;
+    font-size: 0.76rem;
   }
   .gallery__lightbox-close {
     top: 14px;

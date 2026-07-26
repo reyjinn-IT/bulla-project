@@ -5,20 +5,20 @@ import './Encourage.css'
 
 const CARDS: StackCard[] = [
   {
-    title: 'Kamu udah jauh lebih kuat dari yang kamu kira',
-    desc: 'Semua proses berat yang udah kamu lewatin itu bukti nyata, bukan kebetulan. Aku yang liat dari samping aja bangga.',
+    title: 'Kehadiran kamu itu sangat berarti',
+    desc: 'Makasih udah hadir di dunia ini. Kamu bukan cuma sekadar cantik, tapi juga bikin hari-hari terasa lebih bermakna.',
     icon: HeartHandshake,
     accent: '#ff6f9f',
   },
   {
-    title: 'Gak apa-apa kalau capek',
-    desc: 'Istirahat bukan berarti berhenti. Pelan-pelan juga tetap jalan, dan aku tetep nungguin di ujungnya.',
-    icon: Battery,
+    title: 'Pengingat untuk terus jadi orang baik',
+    desc: 'Kebaikan dan ketulusan kamu selalu jadi inspirasi buat aku untuk terus berusaha jadi pribadi yang lebih baik setiap harinya.',
+    icon: Sparkles,
     accent: '#e8a87c',
   },
   {
-    title: 'Progres kamu kelihatan kok',
-    desc: 'Mungkin gak selalu kamu sadari, tapi orang di sekitar kamu — apalagi aku — liat usahanya, sekecil apa pun itu.',
+    title: 'Progres dan energi positif kamu nyata',
+    desc: 'Aku yakin Kamu Pasti bisa ngejar Mimpi kamu bull, Kejar PTN idaman kamu itu aku support kamu selalu dari sini',
     icon: TrendingUp,
     accent: '#9db5d8',
   }

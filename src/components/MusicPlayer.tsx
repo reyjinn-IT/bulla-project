@@ -1,16 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import './MusicPlayer.css'
 
-const TRACK_SRC = '/public/song/lagu.mp3'
+const TRACK_SRC = '/song/lagu.mp3'
 
-/**
- * Background music that tries to autoplay as soon as the page loads.
- * Browsers block unmuted autoplay until the visitor has interacted with
- * the page at least once, so if the initial attempt is blocked, this
- * quietly retries on the very first tap/click/keypress anywhere on the
- * page instead of failing silently forever. A small floating pill also
- * lets Bulla pause/resume it by hand.
- */
 export default function MusicPlayer() {
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [playing, setPlaying] = useState(false)
@@ -24,8 +16,6 @@ export default function MusicPlayer() {
         .play()
         .then(() => setPlaying(true))
         .catch(() => {
-          // autoplay blocked by the browser — the interaction listeners
-          // below will retry as soon as the visitor does anything
         })
     }
 
